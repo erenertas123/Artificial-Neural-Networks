@@ -98,7 +98,6 @@ namespace WindowsFormsApp1
             { 
                 GC.Collect();
             }
-
         }
         public List<double> fetch(int data, int count)
         {
@@ -114,7 +113,6 @@ namespace WindowsFormsApp1
 
             }
             return a;
-
         }
 
     }

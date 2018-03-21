@@ -1,0 +1,13 @@
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\bin\Debug\ExcelDataReader.dll
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\bin\Debug\ExcelDataReader.xml
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\Neuron.csprojResolveAssemblyReference.cache
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\Neuron.csproj.ResolveComReference.cache
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\Neuron.csproj.GenerateResource.Cache
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\Neuron.csproj.CoreCompileInputs.cache
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\TULPAR\Documents\GitHub\Artificial-Neural-Networks\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

@@ -11,6 +11,9 @@ namespace WindowsFormsApp1
     {
         toplamafonk obj;
         excelClass excel;
+        AktivasyonFonk.first first;
+        AktivasyonFonk.second second;
+        AktivasyonFonk.third third;
         public activation(toplamafonk obj,excelClass excel)
         {
             this.obj = obj;
@@ -22,16 +25,13 @@ namespace WindowsFormsApp1
             
             List<double> aktif = obj.ftop1(data,count,index);
             List<double> fnet = new List<double>();
+            first = new AktivasyonFonk.first();
+            second = new AktivasyonFonk.second();
+            third = new AktivasyonFonk.third();
             double y = 0.0;
             if (deger==0)//Sigmoid
             {
-                for (int i = 0; i < aktif.Count; i++)
-                {
-
-                    y = 1 / (1+Math.Pow(Math.E, aktif[i]));
-                    fnet.Add(y);
-                    y = 0.0;
-                }
+                fnet=first.factive(aktif);
                 for (int i = 0; i <fnet.Count; i++)
                 {
                     excel.print(i + 2, data + 2, fnet[i]);
@@ -40,12 +40,7 @@ namespace WindowsFormsApp1
             }
             else if (deger==1)//Hiperbolik tanjant
             {
-                for (int i = 0; i < aktif.Count; i++)
-                {                  
-                    y = (1 - Math.Pow(Math.E, (-2*aktif[i]))) / (1 + Math.Pow(Math.E, (2*aktif[i])));
-                    fnet.Add(y);
-                    y = 0.0;
-                }
+                fnet = second.factive(aktif);
                 for (int i = 0; i < fnet.Count; i++)
                 {
                     excel.print(i + 2, data + 2, fnet[i]);
@@ -54,19 +49,7 @@ namespace WindowsFormsApp1
             }
             else//Step by Step
             {
-                for (int i = 0; i < aktif.Count; i++)
-                {
-                    if (aktif[i]>=0)
-                    {
-                        y = 1;
-                    }
-                    else
-                    {
-                        y = 0;
-                    }
-                    fnet.Add(y);
-                    y = 0.0;
-                }
+                fnet = third.factive(aktif);
                 for (int i = 0; i < fnet.Count; i++)
                 {
                     excel.print(i + 2, data + 2, fnet[i]);

@@ -58,8 +58,7 @@ namespace WindowsFormsApp1
             nesne.basliklar(data);
             nesne.veriSeti(data, count);
             nesne.show();
-            aktif.activated(data,count,index,deger);
-
+            aktif.activated(data, count, index, deger);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
