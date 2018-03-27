@@ -15,10 +15,18 @@ namespace WindowsFormsApp1.ToplamaFonk
             this.weight = weight;
             this.hostList = hostList;
         }
-        public List<double> top(int data,int count) {
+        public List<double> top(int data,int count,int neuron) {
             double value = 0.0;
             List<double> toplam = new List<double>();
-            for (int i = 0; i < data; i++)
+            //for (int i = 0; i < data; i++)
+            //{
+            //    for (int j = 0; j < count; j++)
+            //    {
+            //        value = hostList[j] * weight[j];
+            //        toplam.Add(value);
+            //    }
+            //}
+            for (int i = 0; i < hostList.Count / weight.Length; i++)
             {
                 for (int j = 0; j < count; j++)
                 {

@@ -8,6 +8,6 @@ namespace WindowsFormsApp1.ToplamaFonk
 {
     interface IToplama
     {
-        List<double> top(int data,int count);
+        List<double> top(int data,int count,int neuron);
     }
 }

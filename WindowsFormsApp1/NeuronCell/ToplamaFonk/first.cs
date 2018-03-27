@@ -16,24 +16,21 @@ namespace WindowsFormsApp1.ToplamaFonk
             this.weight = weight;
             this.hostList = hostList;
         }
-        public List<double> top(int data,int count)
+        public List<double> top(int data,int count,int neuron)
         {
             List<double> toplam = new List<double>();
             double value = 0.0;
+            int sayac = 0;
 
-            for (int i = 0; i < data; i++)
+            for (int i = 0; i < hostList.Count/weight.Length; i++)
             {
                 for (int j = 0; j < count; j++)
                 {
                     value = hostList[i] * weight[j];
                     toplam.Add(value);
                 }
+                //MessageBox.Show(toplam.Count.ToString());
             }
-            //for (int i = 0; i < toplam.Count; i++)
-            //{
-            //    MessageBox.Show("Hostlist "+hostList[i].ToString()+" Toplam "+toplam[i].ToString());
-            //}
-
             double cell = 0.0;
             List<double> deneme = new List<double>();
             for (int i = 0; i <= toplam.Count; i++)
@@ -41,7 +38,7 @@ namespace WindowsFormsApp1.ToplamaFonk
                 if (i % data == 0 && i != 0)
                 {
                     deneme.Add(cell);
-                    if (i!=toplam.Count)
+                    if (i != toplam.Count)
                     {
                         cell = toplam[i];
                     }
@@ -50,14 +47,18 @@ namespace WindowsFormsApp1.ToplamaFonk
                         cell = 0.0;
                     }
                 }
-                if(i%data!=0 || i==0)
+                if (i % data != 0 || i == 0)
                 {
                     cell += toplam[i];
                 }
             }
-            //foreach (var item in deneme)
+            //for (int i = 0; i < weight.Length; i++)
             //{
-            //    MessageBox.Show(item.ToString() );
+            //    MessageBox.Show("HostList. " + hostList[i].ToString() + " Weight. " + weight[i].ToString() +  " deneme " + deneme[i].ToString());
+            //}
+            //for (int i = 0; i < deneme.Count; i++)
+            //{
+            //    MessageBox.Show("deneem budur canu " + deneme[i].ToString());
             //}
             return deneme;
         }

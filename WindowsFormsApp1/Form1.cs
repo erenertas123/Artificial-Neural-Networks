@@ -18,10 +18,12 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
 
-        toplamafonk nesne1;
+        ToplamaFonk.toplamafonk nesne1;
         excelClass nesne;
-        activation aktif;
+        AktivasyonFonk.activation aktif;
+        Cell cell;
         int index,deger;
+        private int data, count, neuron;
         public Form1()
         {
             InitializeComponent();
@@ -47,24 +49,26 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string value1, value2;
+            string value1, value2,value3;
             value1 = textBox1.Text;
             value2 = textBox2.Text;
-            int data, count;
+            value3 = textBox3.Text;
             data = Convert.ToInt16(value1);//Parametre sayısı
             count = Convert.ToInt16(value2);//Veri sayısı
-
+            neuron = Convert.ToInt16(value3);//Neuron sayısı
             nesne.Create();
             nesne.basliklar(data);
-            nesne.veriSeti(data, count);
+            nesne.veriSeti(data, count, neuron);
             nesne.show();
-            aktif.activated(data, count, index, deger);
+            //nesne.fetch(data,count,neuron);
+            cell.Neuron(data,count,index,deger,neuron);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             nesne = new excelClass();
-            nesne1 = new toplamafonk(nesne);
-            aktif = new activation(nesne1,nesne);
+            //nesne1 = new ToplamaFonk.toplamafonk(nesne);
+            //aktif = new AktivasyonFonk.activation(nesne1,nesne);
+            cell = new Cell(nesne);
             comboBox1.Items.Add("Ağırlık");
             comboBox1.Items.Add("Çarpım");
             comboBox1.Items.Add("Maksimum");
@@ -75,6 +79,15 @@ namespace WindowsFormsApp1
             comboBox2.SelectedIndex = 0;
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {

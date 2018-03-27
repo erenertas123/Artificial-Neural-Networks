@@ -51,20 +51,32 @@ namespace WindowsFormsApp1
         {
                     ws.Cells[data,count] = cell;       
         }
-        public void veriSeti(int data, int count)
+        public void veriSeti(int data, int count,int neuron)
         {
             int karma;
             Random rnd = new Random();
+            double[,] veriler = new double[count,data];
             for (int i = 2; i <= count + 1; i++)
             {
                 for (int j = 1; j <= data; j++)
                 {
                     karma = rnd.Next(5, 105);
                     ws.Cells[i, j] = karma;
+                    veriler[(i - 2), (j - 1)] = karma;
                 }
             }
+            int sayac = 1;
+            while (neuron>sayac) {
+                for (int i = 2; i <= count+1; i++)
+                {
+                    for (int j = 0; j < data; j++)
+                    {
+                        ws.Cells[(i+(sayac*count)),j+1]= veriler[i-2, j];
+                    }
+                }
+                sayac++;
+            }          
         }
-
         //public List<double> veriOku(int data,int count) ---->Fetch();
         //{
         //    char start;
@@ -99,19 +111,28 @@ namespace WindowsFormsApp1
                 GC.Collect();
             }
         }
-        public List<double> fetch(int data, int count)
+        public List<double> fetch(int data, int count,int neuron)
         {
             List<double> a = new List<double>();
             char start;
-            for (int i = 2; i <= count+1; i++)
+            int sayac = 1;
+            while (sayac==1)
             {
-                for (int j = 2; j <= data+1; j++)
+                for (int i = 2; i <=count+1; i++)
                 {
-                    start = alf[j - 2];
-                    a.Add(ws.get_Range(start+""+i).Value2);
+                    for (int j = 2; j <= data+1; j++)
+                    {
+                        start = alf[j - 2];
+                        a.Add(ws.get_Range(start+""+i).Value2);
+                    }
                 }
-
+                //for (int i = 0; i < a.Count; i++)
+                //{
+                //    MessageBox.Show("a " + a[i].ToString());
+                //}
+                sayac++;
             }
+           
             return a;
         }
 
